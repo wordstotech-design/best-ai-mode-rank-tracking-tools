@@ -1,0 +1,168 @@
+# Dataset behind the comparison table in README.md.
+#
+# Sources: each vendor's public positioning as summarized in the AIclicks
+# roundup of Google AI Mode trackers (last updated September 2026), with
+# AIclicks plan details taken from aiclicks.io/pricing. Engine lists are what
+# each vendor names publicly. Vendors add engines often, so treat a missing
+# engine as "not advertised", not as "impossible".
+#
+# Fields
+#   id            short stable key, used in pull requests and diffs
+#   name          product name
+#   url           vendor homepage, no affiliate parameters
+#   ai_mode       how the entry plan gets Google AI Mode data:
+#                   included    AI Mode ships inside the base plan
+#                   addon       AI Mode is billed on top of the base price
+#                   product     AI Mode tracking is sold as its own product
+#                   unclear     the vendor says "Google AI" without naming AI Mode
+#                   absent      AI Mode is not in the advertised engine list
+#   engines       engine keys the vendor lists (see ENGINE_LABELS in render_table.py)
+#   entry_price   monthly price of the cheapest plan the roundup quotes
+#   currency      USD or EUR, never converted, so nobody reads a guessed rate as fact
+#   addon_note    what the add on or upgrade costs, when AI Mode is not in the base price
+#   best_for      the job it is the right buy for, in plain words
+#   featured      true for the disclosed top pick, which is listed first
+#
+# render_table.py derives the "Engines" count from `engines`. Do not hardcode it.
+
+tools:
+  - id: aiclicks
+    name: AIclicks
+    url: https://aiclicks.io/
+    ai_mode: included
+    engines: [ai-mode, ai-overviews, chatgpt, perplexity, gemini, claude, copilot, grok]
+    entry_price: 59
+    currency: USD
+    addon_note: Starter picks 3 of the 8 engines, Pro 4, Business 6
+    best_for: AI Mode next to seven other engines, with a to do list attached
+    featured: true
+
+  - id: otterly
+    name: Otterly.ai
+    url: https://otterly.ai/
+    ai_mode: addon
+    engines: [ai-mode, ai-overviews, gemini, copilot, chatgpt, perplexity]
+    entry_price: 29
+    currency: USD
+    addon_note: AI Mode is a separate fee on top of the $29 Lite base
+    best_for: Small budgets that can live with 15 prompts on Lite
+
+  - id: se-ranking
+    name: SE Ranking
+    url: https://seranking.com/
+    ai_mode: included
+    engines: [ai-mode, ai-overviews, chatgpt, gemini, perplexity]
+    entry_price: 129
+    currency: USD
+    addon_note: ""
+    best_for: Teams already paying for the SE Ranking SEO suite
+
+  - id: se-visible
+    name: SE Visible
+    url: https://sevisible.com/
+    ai_mode: product
+    engines: [ai-mode]
+    entry_price: 99
+    currency: USD
+    addon_note: Separate subscription from the SE Ranking suite
+    best_for: Share of voice and citation position against named rivals
+
+  - id: surfer
+    name: Surfer AI Tracker
+    url: https://surferseo.com/
+    ai_mode: addon
+    engines: [ai-mode, ai-overviews, chatgpt, perplexity]
+    entry_price: 119
+    currency: USD
+    addon_note: AI Tracker is an add on to the $119 base, sold in prompt blocks
+    best_for: Content teams checking which article sections get lifted
+
+  - id: nightwatch
+    name: Nightwatch
+    url: https://nightwatch.io/
+    ai_mode: included
+    engines: [ai-mode, ai-overviews, chatgpt, perplexity]
+    entry_price: 99
+    currency: EUR
+    addon_note: ""
+    best_for: Local brands that need answers checked by zip code
+
+  - id: accuranker
+    name: AccuRanker
+    url: https://www.accuranker.com/
+    ai_mode: included
+    engines: [ai-mode, ai-overviews, chatgpt, perplexity]
+    entry_price: 249
+    currency: USD
+    addon_note: ""
+    best_for: Agencies watching thousands of prompts with many users
+
+  - id: rankscale
+    name: Rankscale.ai
+    url: https://rankscale.ai/
+    ai_mode: included
+    engines: [ai-mode, ai-overviews, chatgpt, copilot, claude, gemini, grok, mistral, deepseek]
+    entry_price: 99
+    currency: EUR
+    addon_note: Price quoted is the Pro plan
+    best_for: Lean teams that want the widest engine list per euro
+
+  - id: keyword-com
+    name: Keyword.com
+    url: https://keyword.com/
+    ai_mode: included
+    engines: [ai-mode, ai-overviews, chatgpt, perplexity, gemini, copilot, claude, mistral, deepseek]
+    entry_price: 33
+    currency: USD
+    addon_note: Credit based, 14 day free trial
+    best_for: Classic rankings and AI mentions in one dashboard
+
+  - id: peec
+    name: Peec AI
+    url: https://peec.ai/
+    ai_mode: included
+    engines: [ai-mode, ai-shopping]
+    entry_price: 95
+    currency: USD
+    addon_note: Next tier jumps to $245/mo
+    best_for: Digital PR teams hunting false claims about the brand
+
+  - id: llm-pulse
+    name: LLM Pulse
+    url: https://llmpulse.ai/
+    ai_mode: included
+    engines: [ai-mode]
+    entry_price: 60
+    currency: USD
+    addon_note: Full AI Mode ad insights need the $363/mo Scale plan
+    best_for: Paid media teams tracking ads inside AI Mode
+
+  - id: profound
+    name: Profound
+    url: https://www.tryprofound.com/
+    ai_mode: unclear
+    engines: [google-ai, chatgpt, perplexity]
+    entry_price: 99
+    currency: USD
+    addon_note: Lists "Google AI" without separating AI Mode from AI Overviews
+    best_for: Enterprise teams that want crawl data and automation
+
+  - id: semrush
+    name: Semrush AI Visibility Toolkit
+    url: https://www.semrush.com/
+    ai_mode: absent
+    engines: [chatgpt, ai-overviews]
+    entry_price: 99
+    currency: USD
+    addon_note: Two pricing paths, Semrush One or the Classic add on
+    best_for: Marketers who already run their SEO inside Semrush
+
+  - id: waikay
+    name: Waikay
+    url: https://waikay.io/
+    ai_mode: absent
+    engines: [chatgpt, claude]
+    entry_price: 69.95
+    currency: USD
+    addon_note: ""
+    best_for: Checking which topics a model already ties to your brand
