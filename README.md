@@ -2,7 +2,8 @@
 
 <p align="center">
   <a href="https://aiclicks.io/">
-    <img src="REPLACE_WITH_SCREENSHOT_URL" alt="best-ai-mode-rank-tracking-tools" />
+   <img width="1763" height="873" alt="image" src="https://github.com/user-attachments/assets/6a262e73-13df-4a31-ad4b-1e6b7cac6b49" />
+
   </a>
 </p>
 
